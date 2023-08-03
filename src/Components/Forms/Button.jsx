@@ -1,9 +1,9 @@
 import React from 'react'
-import styles from './Button.module.css'
+import styles from '../../assets/css/Button.module.css'
 
-function Button({children, ...props}) {
+function Button({children}) {
   return (
-    <button {...props} className={styles.button}>{children}</button>
+    <button className={styles.button}>{children}</button>
   )
 }
 
