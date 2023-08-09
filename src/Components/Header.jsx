@@ -3,16 +3,18 @@ import styles from '../assets/css/Header.module.css'
 import { Link } from 'react-router-dom'
 import { ReactComponent as Dogs } from '../assets/img/dogs.svg'
 import { UserContext } from '../UserContext'
+import Button from './Forms/Button'
 
 function Header() {
-  const {data}  = React.useContext(UserContext);
+  const {data, userLogout}  = React.useContext(UserContext);
   return (
-    <nav className={styles.header}>
-      <Link to='/'><Dogs /></Link>
-      {data ? <p>{data.email}</p> : <Link to='/login'>LOGIN / CRIAR</Link>}
-
-    </nav>
+    <header className={styles.header}>
+      <nav className={`${styles.nav} container`}>
+        <Link className={styles.logo} to='/'><Dogs /></Link>
+        {data ? <Link className={styles.login} to='/conta'>{data.nome} -  <button onClick={userLogout}>SAIR</button></Link> : <Link className={styles.login} to='/login'>Login / Criar</Link>}
+      </nav>
+    </header>
   )
-}
+  }
 
 export default Header
