@@ -11,7 +11,7 @@ function Header() {
     <header className={styles.header}>
       <nav className={`${styles.nav} container`}>
         <Link className={styles.logo} to='/'><Dogs /></Link>
-        {data ? <Link className={styles.login} to='/conta'>{data.nome} -  <button onClick={userLogout}>SAIR</button></Link> : <Link className={styles.login} to='/login'>Login / Criar</Link>}
+        {data ? <Link className={styles.login} to='/login'>{data.nome} -  <button onClick={userLogout}>SAIR</button></Link> : <Link className={styles.login} to='/login'>Login / Criar</Link>}
       </nav>
     </header>
   )

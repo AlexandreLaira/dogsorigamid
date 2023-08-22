@@ -10,9 +10,6 @@ import { UserContext } from '../../UserContext'
 function Login() {
   const {login} = React.useContext(UserContext);
 
-  if(login === true){
-    <Navigate to="/conta" />
-  }
   
   return (
     <section className={styles.login}>
